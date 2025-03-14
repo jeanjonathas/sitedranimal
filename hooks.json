@@ -2,7 +2,7 @@
   {
     "id": "redeploy-sitedranimal",
     "execute-command": "/usr/local/bin/redeploy-sitedranimal.sh",
-    "command-working-directory": "/tmp",
+    "command-working-directory": "/",
     "response-message": "Iniciando reimplantação do site Dr. Animal...",
     "trigger-rule": {
       "match": {

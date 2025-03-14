@@ -1,8 +1,30 @@
 [
   {
     "id": "redeploy-sitedranimal",
-    "execute-command": "/usr/local/bin/redeploy-sitedranimal.sh",
+    "execute-command": "docker",
     "command-working-directory": "/",
+    "pass-arguments-to-command": [
+      {
+        "source": "string",
+        "name": "stack"
+      },
+      {
+        "source": "string",
+        "name": "deploy"
+      },
+      {
+        "source": "string",
+        "name": "-c"
+      },
+      {
+        "source": "string",
+        "name": "/root/docker-compose.yml"
+      },
+      {
+        "source": "string",
+        "name": "sitedranimal"
+      }
+    ],
     "response-message": "Iniciando reimplantação do site Dr. Animal...",
     "trigger-rule": {
       "match": {

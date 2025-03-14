@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#61CE70', // Verde da Dr. Animal
+        primary: '#0092df', // Verde da Dr. Animal
         secondary: '#393C3F', // Cor secundária do site
         accent: '#FFBC7D', // Cor de destaque
       },

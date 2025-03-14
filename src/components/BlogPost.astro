@@ -1,0 +1,26 @@
+---
+interface Props {
+  frontmatter: {
+    title: string;
+    date: string;
+    description: string;
+  };
+  content: string;
+}
+
+const { frontmatter, content } = Astro.props as Props;
+---
+
+<article class="prose max-w-none">
+  <header>
+    <h1 class="text-3xl font-bold text-secondary mb-4">{frontmatter.title}</h1>
+    <div class="text-gray-600 text-sm mb-6">
+      <time datetime={frontmatter.date}>{frontmatter.date}</time>
+    </div>
+  </header>
+  
+  <div class="space-y-6">
+    <p class="text-gray-600 mb-4">{frontmatter.description}</p>
+    <div class="content" set:html={content} />
+  </div>
+</article>

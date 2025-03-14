@@ -21,13 +21,13 @@ import BadgeAtendimento from './BadgeAtendimento.astro';
       <div class="order-2 md:order-1">
         <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
           <p class="text-gray-700 mb-5 leading-relaxed">
-            Somos uma clínica veterinária com <span class="font-semibold text-primary">mais de 15 anos de experiência</span>, dedicada a oferecer o melhor atendimento para seu pet. Nossa equipe é formada por profissionais altamente qualificados e apaixonados por animais.
+            Somos uma clínica veterinária com <span class="font-semibold text-primary">mais 5 anos de experiência</span>, dedicada a oferecer o melhor atendimento para seu pet. Nossa equipe é formada por profissionais altamente qualificados e apaixonados por animais.
           </p>
           <p class="text-gray-700 mb-5 leading-relaxed">
             Contamos com instalações modernas e equipamentos de última geração para garantir diagnósticos precisos e tratamentos eficazes. Nosso objetivo é proporcionar bem-estar e qualidade de vida para os animais de estimação.
           </p>
           <p class="text-gray-700 mb-6 leading-relaxed">
-            Oferecemos atendimento 24 horas, incluindo serviço de busca e entrega em domicílio, para maior comodidade dos tutores e conforto dos pets.
+            Oferecemos atendimento 24 horas, serviço de consulta em domicílio, para maior comodidade dos tutores e conforto dos pets.
           </p>
           
           <div class="flex flex-col sm:flex-row gap-4 mt-8">
@@ -87,46 +87,35 @@ import BadgeAtendimento from './BadgeAtendimento.astro';
       
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-primary/20 transition-colors group hover:-translate-y-2 duration-300">
-          <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="currentColor" viewBox="0 0 640 512">
-              <path d="M320 0c17.7 0 32 14.3 32 32V96H472c39.8 0 72 32.2 72 72V440c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72H288V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H208zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H304zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16H400zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224H64V416H48c-26.5 0-48-21.5-48-48V272c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H576V224h16z"/>
-            </svg>
+          <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-300 text-6xl">
+            🕒
           </div>
           <h4 class="text-xl font-bold text-secondary mb-3">Atendimento 24h</h4>
           <p class="text-gray-600">Disponíveis a qualquer hora para cuidar do seu pet em casos de emergência.</p>
-          <div class="mt-4">
-            <BadgeAtendimento position="default" className="w-fit mx-auto" />
-          </div>
         </div>
-        
+
         <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-primary/20 transition-colors group hover:-translate-y-2 duration-300">
-          <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="currentColor" viewBox="0 0 512 512">
-              <path d="M184 48H328c4.4 0 8 3.6 8 8V96H176V56c0-4.4 3.6-8 8-8zm-56 8V96H64C28.7 96 0 124.7 0 160v96H192 320 512V160c0-35.3-28.7-64-64-64H384V56c0-30.9-25.1-56-56-56H184c-30.9 0-56 25.1-56 56zM512 288H320v32c0 17.7-14.3 32-32 32H224c-17.7 0-32-14.3-32-32V288H0V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V288z"/>
-            </svg>
+          <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-300 text-6xl">
+            👩‍⚕️
           </div>
           <h4 class="text-xl font-bold text-secondary mb-3">Equipe Especializada</h4>
           <p class="text-gray-600">Profissionais com formação especializada e constante atualização técnica.</p>
         </div>
-        
+
         <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-primary/20 transition-colors group hover:-translate-y-2 duration-300">
-          <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="currentColor" viewBox="0 0 512 512">
-              <path d="M0 224.2C0 100.6 100.2 0 224 0h24c95.2 0 181.2 69.3 197.3 160.2c2.3 13 6.8 25.7 15.1 36l42 52.6c6.2 7.8 9.6 17.4 9.6 27.4c0 24.2-19.6 43.8-43.8 43.8H448v64c0 35.3-28.7 64-64 64H320v32c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V384H32c-17.7 0-32-14.3-32-32V224.2zM74.1 208C85 117.7 163.2 48 256 48s171 69.7 181.9 160H74.1zM320 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm-192 0a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/>
-            </svg>
+          <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-300 text-6xl">
+            🚑
           </div>
           <h4 class="text-xl font-bold text-secondary mb-3">Busca e Entrega</h4>
-          <p class="text-gray-600">Serviço de busca e entrega em domicílio para maior comodidade.</p>
+          <p class="text-gray-600">Serviço atendimento em domicílio para maior comodidade.</p>
         </div>
-        
+
         <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-primary/20 transition-colors group hover:-translate-y-2 duration-300">
-          <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-300">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-14 w-14" fill="currentColor" viewBox="0 0 512 512">
-              <path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm0 66.8V444.8C394 378 431.1 230.1 432 141.4L256 66.8l0 0z"/>
-            </svg>
+          <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-300 text-6xl">
+            💉
           </div>
-          <h4 class="text-xl font-bold text-secondary mb-3">Tecnologia Avançada</h4>
-          <p class="text-gray-600">Equipamentos modernos para diagnósticos precisos e tratamentos eficazes.</p>
+          <h4 class="text-xl font-bold text-secondary mb-3">Diagnóstico Preciso</h4>
+          <p class="text-gray-600">Parceria com profissionais com equipamentos modernos para exames laboratoriais e diagnósticos por imagem (raio-x e ultrassom).</p>
         </div>
       </div>
     </div>
@@ -135,7 +124,7 @@ import BadgeAtendimento from './BadgeAtendimento.astro';
     <div class="mt-20 bg-white p-10 rounded-2xl shadow-lg border border-gray-100">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
-          <div class="text-4xl font-bold text-primary mb-2">15+</div>
+          <div class="text-4xl font-bold text-primary mb-2">5+</div>
           <p class="text-gray-600">Anos de experiência</p>
         </div>
         <div>
@@ -143,8 +132,8 @@ import BadgeAtendimento from './BadgeAtendimento.astro';
           <p class="text-gray-600">Pets atendidos</p>
         </div>
         <div>
-          <div class="text-4xl font-bold text-primary mb-2">12</div>
-          <p class="text-gray-600">Especialistas</p>
+          <div class="text-4xl font-bold text-primary mb-2">Diversos</div>
+          <p class="text-gray-600">Especialistas disponíveis</p>
         </div>
         <div>
           <div class="text-4xl font-bold text-primary mb-2">24/7</div>

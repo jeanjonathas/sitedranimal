@@ -48,9 +48,11 @@ const artigosRelacionados = post.data.artigosRelacionados || [];
           
           {tags.length > 0 && (
             <div class="mt-8 flex flex-wrap gap-2">
-              {% for tag in tags %}
-                <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm transition-colors">{{ tag }}</a>
-              {% endfor %}
+              {tags.map((tag) => (
+                <a href="#" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1 rounded-full text-sm transition-colors">
+                  {tag}
+                </a>
+              ))}
             </div>
           )}
 

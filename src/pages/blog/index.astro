@@ -1,0 +1,190 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const artigos = [
+  {
+    titulo: "Cuidados essenciais com filhotes nos primeiros meses",
+    resumo: "Descubra os cuidados necessários para garantir a saúde e o desenvolvimento adequado do seu filhote nos primeiros meses de vida.",
+    imagem: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+    data: "10 de março de 2025",
+    autor: "Dra. Carolina Santos",
+    categoria: "Cuidados Básicos",
+    slug: "cuidados-essenciais-filhotes"
+  },
+  {
+    titulo: "Vacinação em pets: tudo o que você precisa saber",
+    resumo: "Entenda a importância das vacinas para a saúde do seu pet, quais são as principais vacinas e o calendário de vacinação recomendado.",
+    imagem: "https://images.unsplash.com/photo-1612531770612-16286d3eeb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    data: "28 de fevereiro de 2025",
+    autor: "Dr. Rafael Oliveira",
+    categoria: "Prevenção",
+    slug: "vacinacao-em-pets"
+  },
+  {
+    titulo: "Alimentação saudável para cães e gatos",
+    resumo: "Saiba como escolher a alimentação ideal para o seu pet, considerando idade, raça, tamanho e necessidades específicas.",
+    imagem: "https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    data: "15 de fevereiro de 2025",
+    autor: "Dra. Mariana Costa",
+    categoria: "Nutrição",
+    slug: "alimentacao-saudavel-caes-gatos"
+  },
+  {
+    titulo: "Sinais de alerta: quando levar seu pet ao veterinário",
+    resumo: "Aprenda a identificar sinais importantes que indicam que seu pet precisa de atendimento veterinário urgente.",
+    imagem: "https://images.unsplash.com/photo-1576201836106-db1758fd1c97?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    data: "5 de fevereiro de 2025",
+    autor: "Dr. Lucas Mendes",
+    categoria: "Emergências",
+    slug: "sinais-alerta-veterinario"
+  },
+  {
+    titulo: "Cuidados com a saúde bucal do seu pet",
+    resumo: "Descubra a importância da higiene bucal para a saúde geral do seu pet e como realizar a limpeza corretamente em casa.",
+    imagem: "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
+    data: "20 de janeiro de 2025",
+    autor: "Dra. Carolina Santos",
+    categoria: "Higiene",
+    slug: "saude-bucal-pet"
+  },
+  {
+    titulo: "Como preparar seu pet para uma viagem",
+    resumo: "Dicas importantes para garantir uma viagem tranquila e segura com seu animal de estimação, seja de carro, avião ou outros meios de transporte.",
+    imagem: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80",
+    data: "5 de janeiro de 2025",
+    autor: "Dr. Rafael Oliveira",
+    categoria: "Dicas",
+    slug: "preparar-pet-viagem"
+  }
+];
+
+const categorias = [...new Set(artigos.map(artigo => artigo.categoria))];
+---
+
+<Layout title="Blog - Dr. Animal">
+  <Navbar />
+  
+  <main>
+    <!-- Banner do Blog -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-6">Blog Dr. Animal</h1>
+          <p class="text-gray-600 text-lg mb-8">
+            Artigos, dicas e informações para ajudar você a cuidar melhor do seu pet.
+          </p>
+          
+          <!-- Categorias -->
+          <div class="flex flex-wrap justify-center gap-3">
+            <a href="/blog" class="bg-primary text-white px-4 py-2 rounded-full text-sm font-medium">
+              Todos
+            </a>
+            {categorias.map(categoria => (
+              <a href={`/blog/categoria/${categoria.toLowerCase().replace(/\s+/g, '-')}`} class="bg-white border border-gray-300 hover:border-primary text-gray-700 hover:text-primary px-4 py-2 rounded-full text-sm font-medium transition-colors">
+                {categoria}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Lista de Artigos -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {artigos.map((artigo) => (
+            <article class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+              <a href={`/blog/${artigo.slug}`} class="block">
+                <div class="relative">
+                  <img 
+                    src={artigo.imagem} 
+                    alt={artigo.titulo} 
+                    class="w-full h-56 object-cover"
+                  />
+                  <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                    {artigo.categoria}
+                  </div>
+                </div>
+                
+                <div class="p-6">
+                  <div class="flex items-center text-sm text-gray-500 mb-3">
+                    <span>{artigo.data}</span>
+                    <span class="mx-2">•</span>
+                    <span>{artigo.autor}</span>
+                  </div>
+                  
+                  <h3 class="text-xl font-bold text-secondary mb-3 hover:text-primary transition-colors">
+                    {artigo.titulo}
+                  </h3>
+                  
+                  <p class="text-gray-600 mb-4">
+                    {artigo.resumo}
+                  </p>
+                  
+                  <div class="flex items-center text-primary font-medium">
+                    Ler mais
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+            </article>
+          ))}
+        </div>
+        
+        <!-- Paginação -->
+        <div class="mt-12 flex justify-center">
+          <div class="flex items-center space-x-2">
+            <a href="#" class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-50 transition-colors">
+              Anterior
+            </a>
+            <a href="#" class="bg-primary text-white px-4 py-2 rounded-md">1</a>
+            <a href="#" class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-50 transition-colors">2</a>
+            <a href="#" class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-50 transition-colors">3</a>
+            <span class="px-2">...</span>
+            <a href="#" class="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded-md hover:bg-gray-50 transition-colors">
+              Próxima
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Inscrição na Newsletter -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl font-bold text-secondary mb-4">Receba nossas novidades</h2>
+          <p class="text-gray-600 mb-8">
+            Inscreva-se em nossa newsletter e receba dicas, artigos e novidades sobre cuidados com pets diretamente no seu email.
+          </p>
+          
+          <form class="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+            <input 
+              type="email" 
+              placeholder="Seu melhor email" 
+              class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+              required
+            />
+            <button 
+              type="submit" 
+              class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+            >
+              Inscrever-se
+            </button>
+          </form>
+          
+          <p class="text-gray-500 text-sm mt-4">
+            Respeitamos sua privacidade. Você pode cancelar a inscrição a qualquer momento.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</Layout>

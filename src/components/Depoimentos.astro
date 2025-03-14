@@ -1,0 +1,86 @@
+---
+const depoimentos = [
+  {
+    nome: "Ana Silva",
+    foto: "https://randomuser.me/api/portraits/women/12.jpg",
+    texto: "Meu cachorro foi atendido com muito carinho e profissionalismo. O serviço de busca e entrega foi excelente, facilitou muito minha vida. Recomendo a todos!",
+    pet: "Thor, Labrador"
+  },
+  {
+    nome: "Carlos Oliveira",
+    foto: "https://randomuser.me/api/portraits/men/32.jpg",
+    texto: "Minha gata precisou de uma cirurgia de emergência e a equipe da Dr. Animal foi incrível. Atendimento 24 horas realmente funciona e salvou a vida da minha pet.",
+    pet: "Luna, Persa"
+  },
+  {
+    nome: "Mariana Costa",
+    foto: "https://randomuser.me/api/portraits/women/45.jpg",
+    texto: "Atendimento de excelência! Os veterinários são muito atenciosos e explicam tudo detalhadamente. As instalações são modernas e limpas. Meu pet sempre é bem tratado.",
+    pet: "Simba, Golden Retriever"
+  },
+  {
+    nome: "Roberto Santos",
+    foto: "https://randomuser.me/api/portraits/men/67.jpg",
+    texto: "Já passei por várias clínicas veterinárias, mas a Dr. Animal é sem dúvida a melhor. O atendimento domiciliar é um diferencial incrível para quem tem pets que ficam estressados com deslocamentos.",
+    pet: "Nina, Shih Tzu"
+  }
+];
+---
+
+<section id="depoimentos" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">O que nossos clientes dizem</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        A satisfação dos nossos clientes e o bem-estar dos pets são nossa prioridade. Confira alguns depoimentos de tutores que confiam em nosso trabalho.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {depoimentos.map((depoimento) => (
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <div class="flex items-center mb-4">
+            <img 
+              src={depoimento.foto} 
+              alt={`Foto de ${depoimento.nome}`} 
+              class="w-14 h-14 rounded-full object-cover mr-4"
+            />
+            <div>
+              <h4 class="font-bold text-secondary">{depoimento.nome}</h4>
+              <p class="text-sm text-gray-500">{depoimento.pet}</p>
+            </div>
+          </div>
+          
+          <p class="text-gray-600 mb-4">"{depoimento.texto}"</p>
+          
+          <div class="flex text-yellow-400">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-16 text-center">
+      <a href="https://g.page/r/CXwdYBQzLXAYEAI/review" target="_blank" class="bg-white border-2 border-primary hover:bg-primary text-primary hover:text-white font-bold py-3 px-8 rounded-full transition-colors inline-flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+          <path d="M10 12.006c2.761 0 5-2.239 5-5.003 0-2.761-2.239-5.003-5-5.003s-5 2.242-5 5.003c0 2.764 2.239 5.003 5 5.003zm0-8.505c1.93 0 3.5 1.57 3.5 3.502 0 1.93-1.57 3.502-3.5 3.502s-3.5-1.572-3.5-3.502c0-1.932 1.57-3.502 3.5-3.502zm6.25 9.007c0 1.657-3.134 3.002-6.25 3.002-3.116 0-6.25-1.345-6.25-3.002 0-1.657 3.134-3.002 6.25-3.002 3.116 0 6.25 1.345 6.25 3.002zm-1.5 0c0-.477-1.931-1.502-4.75-1.502s-4.75 1.025-4.75 1.502c0 .477 1.931 1.502 4.75 1.502s4.75-1.025 4.75-1.502z" />
+        </svg>
+        Deixe sua avaliação
+      </a>
+    </div>
+  </div>
+</section>

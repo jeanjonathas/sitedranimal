@@ -1,0 +1,74 @@
+---
+const servicos = [
+  {
+    titulo: "Consultas",
+    descricao: "Atendimento clínico completo com médicos veterinários especializados para cuidar da saúde do seu pet.",
+    icone: "stethoscope"
+  },
+  {
+    titulo: "Vacinas",
+    descricao: "Programa de vacinação completo para cães e gatos, seguindo os protocolos mais atualizados.",
+    icone: "syringe"
+  },
+  {
+    titulo: "Exames",
+    descricao: "Laboratório próprio para exames de sangue, urina, fezes e diagnóstico por imagem (raio-x e ultrassom).",
+    icone: "microscope"
+  },
+  {
+    titulo: "Cirurgias",
+    descricao: "Centro cirúrgico equipado para procedimentos de rotina e emergenciais com monitoramento completo.",
+    icone: "scalpel"
+  },
+  {
+    titulo: "Internação",
+    descricao: "Espaço dedicado para internação com monitoramento 24 horas por nossa equipe especializada.",
+    icone: "hospital"
+  },
+  {
+    titulo: "Atendimento Domiciliar",
+    descricao: "Levamos nossos serviços até você. Atendimento em domicílio para maior conforto do seu pet.",
+    icone: "truck"
+  }
+];
+
+// Ícones do FontAwesome
+const icones = {
+  stethoscope: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor"><path d="M142.4 21.9c5.6 16.8-3.5 34.9-20.2 40.5L96 71.1V192c0 53 43 96 96 96s96-43 96-96V71.1l-26.1-8.7c-16.8-5.6-25.8-23.7-20.2-40.5s23.7-25.8 40.5-20.2l26.1 8.7C334.4 19.1 352 43.5 352 71.1V192c0 77.2-54.6 141.6-127.3 156.7C231 404.6 278.4 448 336 448c61.9 0 112-50.1 112-112V265.3c-28.3-12.3-48-40.5-48-73.3c0-44.2 35.8-80 80-80s80 35.8 80 80c0 32.8-19.7 61-48 73.3V336c0 97.2-78.8 176-176 176c-92.9 0-168.9-71.9-175.5-163.1C87.2 334.2 32 269.6 32 192V71.1c0-27.5 17.6-52 43.8-60.7l26.1-8.7c16.8-5.6 34.9 3.5 40.5 20.2zM480 224c17.7 0 32-14.3 32-32s-14.3-32-32-32s-32 14.3-32 32s14.3 32 32 32z"/></svg>`,
+  syringe: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M441 7l32 32 32 32c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-15-15L417.9 128l15 15c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-32-32-32-32 33.9-33.9-15-15L315 97.9l15 15c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-32-32L231 81.9l33.9-33.9-15-15L217 65.9l15 15c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0l-32-32L134 49.9 167.9 16 152.1 .1 118.1 34l0 0L118.1 34 84.1 0 50.2 33.9 84.1 67.9l0 0-48 48 24 24L9.4 190.6c-12.5 12.5-12.5 32.8 0 45.3l208 208c12.5 12.5 32.8 12.5 45.3 0l50.7-50.7 24 24 48-48 0 0 34 34 33.9-33.9-34-34 0 0-34-34L352.1 336l34 34 33.9-33.9-34-34 0 0 0 0-34-34L318.1 302.1l34 34 33.9-33.9-34-34 0 0-34-34L284.1 268.1l34 34 33.9-33.9-34-34 0 0-34-34L250.1 234.1l34 34 33.9-33.9-34-34 0 0-34-34L216.1 200.1l34 34 33.9-33.9-34-34 0 0-34-34L182.1 166.1l34 34 33.9-33.9-34-34 0 0-34-34-33.9 33.9 34 34 0 0-48 48 24 24-73.4 73.4L7 263.9 263.9 7 231 7z"/></svg>`,
+  microscope: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M160 32c0-17.7 14.3-32 32-32h32c17.7 0 32 14.3 32 32c0 17.7-14.3 32-32 32V96c26.5 0 48 21.5 48 48v32c0 26.5-21.5 48-48 48H192c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48V64c-17.7 0-32-14.3-32-32zM64 352h64c0 35.3 28.7 64 64 64h32c35.3 0 64-28.7 64-64h64c35.3 0 64 28.7 64 64v32c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V416c0-35.3 28.7-64 64-64zM288 256c0 17.7-14.3 32-32 32H160c-17.7 0-32-14.3-32-32V224c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32v32z"/></svg>`,
+  scalpel: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><path d="M258.6 0c-1.7 0-3.4 .1-5.1 .5C168 16 115.8 102.3 130.2 188.9l5.1 30.4-44.7 44.7C77.8 276.7 68 294.7 68 314v10c0 17.7 14.3 32 32 32h48c17.7 0 32-14.3 32-32V314c0-19.3-9.8-37.3-22.6-49.9L120 226.7l5.1-30.4c8.9-53.2 57.7-89.5 111-81.1c47.5 7.5 84.1 46.5 89.2 94.2c.6 5.8 5.5 10.2 11.3 10.2H352c6.2 0 11.3-5 11.3-11.2c-3.2-93.4-79.3-168.8-173-168.8l-8.2 0c-1.7 0-3.4 0-5.1 0c-5.5 0-10.9 .2-16.3 .7l12.8 76.3c3.6 21.6-13.2 41.8-35 41.8H104.3c-12.3 0-22.9-8.4-25.4-20.3L62.7 33.6C59.3 22.8 49.1 16 37.8 16H32C14.3 16 0 30.3 0 48s14.3 32 32 32H37.8c11.3 0 21.5-6.8 25-17.5L79.1 38.8C40.3 67.8 14.3 114 8.3 166.8c-1.2 10.8 7.2 20.3 18.2 20.3h5c9.7 0 17.7-7.2 19-16.8c5.7-43.7 29.7-81.5 65.5-105.3l2.9 17.5c2.6 15.1 15.7 26.1 31 26.1h34.2c23.1 0 40.1-20.9 36.2-43.7l-10.7-64C220.8 2.5 240.1 0 258.6 0zM352 368a96 96 0 1 0 0 192 96 96 0 1 0 0-192zm0 128a32 32 0 1 1 0-64 32 32 0 1 1 0 64z"/></svg>`,
+  hospital: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor"><path d="M192 48c0-26.5 21.5-48 48-48H400c26.5 0 48 21.5 48 48V512H368V432c0-26.5-21.5-48-48-48s-48 21.5-48 48v80H192V48zM48 96H160V512H48c-26.5 0-48-21.5-48-48V144c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48V464c0 26.5-21.5 48-48 48H480V96H592zM312 64c-8.8 0-16 7.2-16 16v24H272c-8.8 0-16 7.2-16 16v16c0 8.8 7.2 16 16 16h24v24c0 8.8 7.2 16 16 16h16c8.8 0 16-7.2 16-16V152h24c8.8 0 16-7.2 16-16V120c0-8.8-7.2-16-16-16H344V80c0-8.8-7.2-16-16-16H312z"/></svg>`,
+  truck: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor"><path d="M48 0C21.5 0 0 21.5 0 48V368c0 26.5 21.5 48 48 48H64c0 53 43 96 96 96s96-43 96-96H384c0 53 43 96 96 96s96-43 96-96h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V288 256 237.3c0-17-6.7-33.3-18.7-45.3L512 114.7c-12-12-28.3-18.7-45.3-18.7H416V48c0-26.5-21.5-48-48-48H48zM416 160h50.7L544 237.3V256H416V160zM112 416a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm368-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>`
+};
+---
+
+<section id="servicos" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Nossos Serviços</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Oferecemos uma ampla gama de serviços veterinários para garantir que seu pet receba os melhores cuidados possíveis.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {servicos.map((servico) => (
+        <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow">
+          <div class="text-primary w-16 h-16 mb-4" set:html={icones[servico.icone]} />
+          <h3 class="text-xl font-bold text-secondary mb-3">{servico.titulo}</h3>
+          <p class="text-gray-600">{servico.descricao}</p>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-16 text-center">
+      <a href="https://wa.me/5551999999999" class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-colors inline-flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 448 512">
+          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+        Agende um Serviço
+      </a>
+    </div>
+  </div>
+</section>

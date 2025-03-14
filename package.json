@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "Landing page para a clínica veterinária Dr. Animal",
   "type": "module",
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
+"scripts": {
+  "dev": "astro dev --host",
+  "start": "astro dev --host",
+  "build": "astro build",
+  "preview": "astro preview",
+  "astro": "astro"
+}
+,
   "keywords": ["astro", "veterinaria", "landing-page"],
   "author": "",
   "license": "ISC",

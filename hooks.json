@@ -1,0 +1,18 @@
+[
+  {
+    "id": "redeploy-sitedranimal",
+    "execute-command": "/usr/local/bin/redeploy-sitedranimal.sh",
+    "command-working-directory": "/tmp",
+    "response-message": "Iniciando reimplantação do site Dr. Animal...",
+    "trigger-rule": {
+      "match": {
+        "type": "payload-hmac-sha1",
+        "secret": "{{ getenv "WEBHOOK_SECRET" }}",
+        "parameter": {
+          "source": "header",
+          "name": "X-Hub-Signature"
+        }
+      }
+    }
+  }
+]

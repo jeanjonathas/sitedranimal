@@ -1,0 +1,112 @@
+version: "3.7"
+services:
+  init:
+    image: bitnami/git
+    entrypoint: ["/bin/bash", "-c"]
+    command: [
+      "rm -rf /app/* && git clone https://github.com/jeanjonathas/sitedranimal.git /app && chmod -R 777 /app && touch /app/.init_complete"
+    ]
+    volumes:
+      - app_data:/app
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+
+  setup:
+    image: node:18
+    entrypoint: ["/bin/bash", "-c"]
+    command: [
+      "while [ ! -f /app/.init_complete ]; do echo 'Waiting for init to complete...' && sleep 5; done && cd /app && npm install --no-fund --no-audit && touch /app/.setup_complete"
+    ]
+    volumes:
+      - app_data:/app
+      - npm_cache:/root/.npm
+    networks:
+      - dranimal_network
+    depends_on:
+      - init
+    deploy:
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+
+  app:
+    image: node:18
+    entrypoint: ["/bin/bash", "-c"]
+    command: [
+      "while [ ! -f /app/.setup_complete ]; do echo 'Waiting for setup to complete...' && sleep 5; done && cd /app && npm run build && find dist -name '*.html' -exec sed -i 's|/src/images/|/images/|g' {} \\; && mkdir -p dist/images && cp -r src/images/* dist/images/ && npx serve dist -s -l 3000"
+    ]
+    volumes:
+      - app_data:/app
+      - npm_cache:/root/.npm
+    networks:
+      - dranimal_network
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - init
+      - setup
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 1024M
+      restart_policy:
+        condition: any
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.dranimal.rule=Host(`doutoranimal.com.br`) || Host(`dranimal.com.br`)
+        - traefik.http.routers.dranimal.entrypoints=websecure
+        - traefik.http.routers.dranimal.tls=true
+        - traefik.http.routers.dranimal.tls.certresolver=letsencryptresolver
+        - traefik.http.services.dranimal.loadbalancer.server.port=3000
+        - traefik.http.services.dranimal.loadbalancer.passHostHeader=true
+        - traefik.http.routers.dranimal.service=dranimal
+        - traefik.http.middlewares.dranimal-compress.compress=true
+        - traefik.http.routers.dranimal.middlewares=dranimal-compress
+
+  webhook:
+    image: almir/webhook
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - webhook_data:/etc/webhook
+    networks:
+      - dranimal_network
+    environment:
+      - WEBHOOK_SECRET=Drfh7Yt3Kl9Pq2Zx5Vb8Nm4Ws6Uj1Io0
+    command: ["-hooks=/etc/webhook/hooks.json", "-verbose"]
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.dranimal-webhook.rule=Host(`webhook.doutoranimal.com.br`)
+        - traefik.http.routers.dranimal-webhook.entrypoints=websecure
+        - traefik.http.routers.dranimal-webhook.tls=true
+        - traefik.http.routers.dranimal-webhook.tls.certresolver=letsencryptresolver
+        - traefik.http.services.dranimal-webhook.loadbalancer.server.port=9000
+
+volumes:
+  app_data:
+    name: dranimal_app_data
+  npm_cache:
+    name: dranimal_npm_cache
+  webhook_data:
+    name: dranimal_webhook_data
+
+networks:
+  dranimal_network:
+    external: true
+    name: ralliugaNet

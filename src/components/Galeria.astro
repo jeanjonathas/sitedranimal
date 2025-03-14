@@ -48,6 +48,9 @@ const imagens = [
           <img 
             src={imagem.url} 
             alt={imagem.titulo} 
+            loading="lazy"
+            width="400"
+            height="300"
             class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
           />
           <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">

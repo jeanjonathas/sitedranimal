@@ -60,6 +60,9 @@ const equipe = [
             <img 
               src={membro.foto} 
               alt={`Foto de ${membro.nome}`} 
+              loading="lazy"
+              width="300"
+              height="400"
               class="w-full h-64 object-cover object-center group-hover:scale-105 transition-transform duration-300"
             />
             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">

@@ -128,6 +128,9 @@ const artigosRelacionados = [
               <img 
                 src="https://randomuser.me/api/portraits/women/12.jpg" 
                 alt={`Foto de ${artigo.autor}`} 
+                loading="lazy"
+                width="48"
+                height="48"
                 class="w-full h-full object-cover"
               />
             </div>
@@ -150,6 +153,9 @@ const artigosRelacionados = [
               <img 
                 src={artigo.imagem} 
                 alt={artigo.titulo} 
+                loading="lazy"
+                width="800"
+                height="600"
                 class="w-full h-auto rounded-lg shadow-md"
               />
             </div>
@@ -210,6 +216,9 @@ const artigosRelacionados = [
                 <img 
                   src="https://randomuser.me/api/portraits/women/12.jpg" 
                   alt={`Foto de ${artigo.autor}`} 
+                  loading="lazy"
+                  width="48"
+                  height="48"
                   class="w-16 h-16 rounded-full object-cover mr-4"
                 />
                 <div>
@@ -232,6 +241,9 @@ const artigosRelacionados = [
                       <img 
                         src={relacionado.imagem} 
                         alt={relacionado.titulo} 
+                        loading="lazy"
+                        width="80"
+                        height="80"
                         class="w-full h-full object-cover"
                       />
                     </a>

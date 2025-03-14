@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Criar diretório de logs se não existir
+mkdir -p /var/log
+
 # Log de início
 echo "Iniciando reimplantação do site Dr. Animal em $(date)" >> /var/log/webhook-redeploy.log
 

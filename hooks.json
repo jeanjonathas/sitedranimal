@@ -7,7 +7,7 @@
     "trigger-rule": {
       "match": {
         "type": "payload-hmac-sha1",
-        "secret": "{{ getenv "WEBHOOK_SECRET" }}",
+        "secret": "Drfh7Yt3Kl9Pq2Zx5Vb8Nm4Ws6Uj1Io0",
         "parameter": {
           "source": "header",
           "name": "X-Hub-Signature"

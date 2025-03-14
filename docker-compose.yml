@@ -78,7 +78,8 @@ services:
     image: almir/webhook
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - webhook_data:/etc/webhook
+      - /root/hooks.json:/etc/webhook/hooks.json
+      - /root/redeploy-sitedranimal.sh:/usr/local/bin/redeploy-sitedranimal.sh
     networks:
       - dranimal_network
     environment:

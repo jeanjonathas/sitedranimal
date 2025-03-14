@@ -1,4 +1,5 @@
 ---
+import BadgeAtendimento from './BadgeAtendimento.astro';
 ---
 
 <section id="sobre" class="py-20 bg-gradient-to-b from-white to-gray-50">
@@ -72,6 +73,7 @@
         <!-- Elementos decorativos -->
         <div class="absolute -top-6 -left-6 w-20 h-20 bg-primary/10 rounded-full -z-10"></div>
         <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full -z-10"></div>
+        <BadgeAtendimento position="top-right" className="z-10" />
       </div>
     </div>
     
@@ -92,6 +94,9 @@
           </div>
           <h4 class="text-xl font-bold text-secondary mb-3">Atendimento 24h</h4>
           <p class="text-gray-600">Disponíveis a qualquer hora para cuidar do seu pet em casos de emergência.</p>
+          <div class="mt-4">
+            <BadgeAtendimento position="default" className="w-fit mx-auto" />
+          </div>
         </div>
         
         <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-primary/20 transition-colors group hover:-translate-y-2 duration-300">

@@ -75,16 +75,19 @@ services:
         - traefik.http.routers.dranimal.middlewares=dranimal-compress
 
   webhook:
-    image: almir/webhook
+    image: ubuntu:latest
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /root/hooks.json:/etc/webhook/hooks.json
-      - ./redeploy-sitedranimal.sh:/usr/local/bin/redeploy-sitedranimal.sh
+      - /root/redeploy-sitedranimal.sh:/usr/local/bin/redeploy-sitedranimal.sh
+      - /usr/bin/docker:/usr/bin/docker
+      - /root/docker-compose.yml:/root/docker-compose.yml
     networks:
       - dranimal_network
     environment:
       - WEBHOOK_SECRET=Drfh7Yt3Kl9Pq2Zx5Vb8Nm4Ws6Uj1Io0
-    command: ["-hooks=/etc/webhook/hooks.json", "-verbose"]
+    entrypoint: ["/bin/bash", "-c"]
+    command: ["apt-get update && apt-get install -y wget && mkdir -p /etc/webhook && wget -O /tmp/webhook.tar.gz https://github.com/adnanh/webhook/releases/download/2.8.0/webhook-linux-amd64.tar.gz && tar -xzf /tmp/webhook.tar.gz -C /tmp && mv /tmp/webhook-linux-amd64/webhook /usr/local/bin/ && chmod +x /usr/local/bin/webhook && chmod +x /usr/local/bin/redeploy-sitedranimal.sh && /usr/local/bin/webhook -hooks=/etc/webhook/hooks.json -verbose"]
     deploy:
       mode: replicated
       replicas: 1

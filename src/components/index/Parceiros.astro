@@ -1,0 +1,80 @@
+---
+const parceiros = [
+    {
+    nome: "SuperVet",
+    logo: "/src/images/supervet.png",
+    url: "https://www.supervet.app"
+  }, 
+  
+  {
+    nome: "PremieRpet",
+    logo: "/src/images/premier.png",
+    url: "https://www.premierpet.com.br/"
+  },  
+    {
+    nome: "Intersul",
+    logo: "/src/images/intersul.png",
+    url: "https://www.intersul.com.br/"
+  }, 
+    {
+    nome: "Vetex",
+    logo: "/src/images/vetex.jpg",
+    url: "https://www.vetex.com.br/"
+  }, 
+  {
+    nome: "MSD Saúde Animal",
+    logo: "/src/images/msd.png",
+    url: "https://www.msd-saude-animal.com.br/"
+  },
+  {
+    nome: "Idexx",
+    logo: "/src/images/idexx.png",
+    url: "https://www.idexx.com.br/"
+  }
+];
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Nossos Parceiros</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Trabalhamos com as melhores marcas e instituições para garantir qualidade e excelência no cuidado com seu pet.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+      {parceiros.map((parceiro) => (
+        <a 
+          href={parceiro.url} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="flex justify-center items-center h-24 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow grayscale hover:grayscale-0"
+          aria-label={`Parceiro ${parceiro.nome}`}
+        >
+          <img 
+            src={parceiro.logo} 
+            alt={`Logo ${parceiro.nome}`} 
+            loading="lazy"
+            width="150"
+            height="80"
+            class="max-h-full max-w-full object-contain"
+          />
+        </a>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center">
+      <p class="text-gray-600 mb-4">Interessado em se tornar um parceiro da Dr. Animal?</p>
+      <a 
+        href="#contato" 
+        class="text-primary hover:text-primary/80 font-bold inline-flex items-center transition-colors"
+      >
+        Entre em contato conosco
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

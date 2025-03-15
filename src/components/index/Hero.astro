@@ -1,0 +1,60 @@
+---
+import { Image } from 'astro:assets';
+import BadgeAtendimento from './BadgeAtendimento.astro';
+---
+
+<section class="relative bg-gradient-to-r from-gray-100 to-white pt-32 pb-16 md:pt-40 md:pb-24">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-bold text-secondary mb-6">
+          Cuidados veterinários de <span class="text-primary">excelência</span> para seu pet
+        </h1>
+        <p class="text-gray-700 text-lg mb-8">
+          Clínica Veterinária 24 horas com atendimento completo. Consultas, vacinas, exames, internações e cirurgias. Buscamos e entregamos em domicílio.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="https://tintim.link/whatsapp/d1a3a6b0-0bc6-4664-84f1-9d5a51acf0b1/34707d0a-0cad-42c8-9169-0136cc6527ff" class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-colors text-center">
+            Agendar Consulta
+          </a>
+          <a href="#servicos" class="border-2 border-secondary hover:border-primary text-secondary hover:text-primary font-bold py-3 px-8 rounded-full transition-colors text-center">
+            Nossos Serviços
+          </a>
+        </div>
+      </div>
+      <div class="relative">
+        <img 
+          src="/src/images/frente-clinica.jpg" 
+          alt="Veterinário cuidando de um cachorro" 
+          loading="lazy"
+          width="800"
+          height="600"
+          class="rounded-lg shadow-xl w-full h-auto"
+        />
+        <BadgeAtendimento position="bottom-right" />
+      </div>
+    </div>
+  </div>
+  
+  <!-- Estatísticas -->
+  <div class="container mx-auto px-4 mt-16">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="text-primary text-3xl font-bold mb-2">+5000</div>
+        <div class="text-gray-600">Pets Atendidos</div>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="text-primary text-3xl font-bold mb-2">24h</div>
+        <div class="text-gray-600">Atendimento</div>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="text-primary text-3xl font-bold mb-2">Diversas</div>
+        <div class="text-gray-600">Especialidades</div>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <div class="text-primary text-3xl font-bold mb-2">+5</div>
+        <div class="text-gray-600">Anos de Experiência</div>
+      </div>
+    </div>
+  </div>
+</section>

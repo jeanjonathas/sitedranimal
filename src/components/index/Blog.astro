@@ -1,0 +1,96 @@
+---
+const artigos = [
+  {
+    titulo: "Cuidados essenciais com filhotes nos primeiros meses",
+    resumo: "Descubra os cuidados necessários para garantir a saúde e o desenvolvimento adequado do seu filhote nos primeiros meses de vida.",
+    imagem: "https://images.unsplash.com/photo-1548199973-03cce0bbc87b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+    data: "10 de março de 2025",
+    autor: "MV. Jean Fernandes",
+    categoria: "Cuidados Básicos",
+    slug: "cuidados-essenciais-filhotes"
+  },
+  {
+    titulo: "Vacinação em pets: tudo o que você precisa saber",
+    resumo: "Entenda a importância das vacinas para a saúde do seu pet, quais são as principais vacinas e o calendário de vacinação recomendado.",
+    imagem: "https://images.unsplash.com/photo-1612531770612-16286d3eeb54?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    data: "28 de fevereiro de 2025",
+    autor: "Dr. Rafael Oliveira",
+    categoria: "Prevenção",
+    slug: "vacinacao-em-pets"
+  },
+  {
+    titulo: "Alimentação saudável para cães e gatos",
+    resumo: "Saiba como escolher a alimentação ideal para o seu pet, considerando idade, raça, tamanho e necessidades específicas.",
+    imagem: "https://images.unsplash.com/photo-1623387641168-d9803ddd3f35?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    data: "15 de fevereiro de 2025",
+    autor: "Dra. Mariana Costa",
+    categoria: "Nutrição",
+    slug: "alimentacao-saudavel-caes-gatos"
+  }
+];
+---
+
+<section id="blog" class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Blog Dr. Animal</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Fique por dentro das melhores dicas e informações sobre cuidados com seu pet. Nossos especialistas compartilham conhecimentos valiosos para o bem-estar do seu melhor amigo.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {artigos.map((artigo) => (
+        <article class="bg-gray-50 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+          <a href={`/blog/${artigo.slug}`} class="block">
+            <div class="relative">
+              <img 
+                src={artigo.imagem} 
+                alt={artigo.titulo} 
+                loading="lazy"
+                width="400"
+                height="300"
+                class="w-full h-56 object-cover"
+              />
+              <div class="absolute top-4 right-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">
+                {artigo.categoria}
+              </div>
+            </div>
+            
+            <div class="p-6">
+              <div class="flex items-center text-sm text-gray-500 mb-3">
+                <span>{artigo.data}</span>
+                <span class="mx-2">•</span>
+                <span>{artigo.autor}</span>
+              </div>
+              
+              <h3 class="text-xl font-bold text-secondary mb-3 hover:text-primary transition-colors">
+                {artigo.titulo}
+              </h3>
+              
+              <p class="text-gray-600 mb-4">
+                {artigo.resumo}
+              </p>
+              
+              <div class="flex items-center text-primary font-medium">
+                Ler mais
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </div>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center">
+      <a href="/blog" class="bg-white border-2 border-primary hover:bg-primary text-primary hover:text-white font-bold py-3 px-8 rounded-full transition-colors inline-flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+        </svg>
+        Ver todos os artigos
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,91 @@
+---
+const imagens = [
+  {
+    url: "/src/images/recepcao.jpg",
+    titulo: "Recepção",
+    descricao: "Nossa recepção acolhedora e confortável"
+  },
+  {
+    url: "/src/images/carro (1).jpg",
+    titulo: "Consultório",
+    descricao: "Consultórios equipados com tecnologia de ponta"
+  },
+  {
+    url: "/src/images/centro cirurgico.jpg",
+    titulo: "Centro Cirúrgico",
+    descricao: "Centro cirúrgico moderno e esterilizado"
+  },
+  {
+    url: "/src/images/AirBrush_20240301171934 (1).jpg",
+    titulo: "Sala de Exames",
+    descricao: "Equipamentos para diagnósticos precisos"
+  },
+  {
+    url: "/src/images/internacao.jpg",
+    titulo: "Internação",
+    descricao: "Área de internação com monitoramento 24h"
+  },
+  {
+    url: "/src/images/pet.jpg",
+    titulo: "Pet Shop",
+    descricao: "Produtos selecionados para o bem-estar do seu pet"
+  }
+];
+---
+
+<section id="galeria" class="py-20 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Nossas Instalações</h2>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Conheça o espaço da Dr. Animal, projetado para oferecer o melhor atendimento e conforto para você e seu pet.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {imagens.map((imagem) => (
+        <div class="group relative overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow cursor-pointer">
+          <img 
+            src={imagem.url} 
+            alt={imagem.titulo} 
+            loading="lazy"
+            width="400"
+            height="300"
+            class="w-full h-64 object-cover transform group-hover:scale-110 transition-transform duration-500"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+            <h3 class="text-white text-xl font-bold">{imagem.titulo}</h3>
+            <p class="text-gray-200 mt-2">{imagem.descricao}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <div class="mt-12 text-center">
+      <a href="#contato" class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-colors inline-flex items-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+        </svg>
+        Agendar Visita
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Adicione aqui qualquer JavaScript necessário para a galeria, como lightbox ou slider
+  document.addEventListener('DOMContentLoaded', function() {
+    const galeriaItems = document.querySelectorAll('#galeria .group');
+    
+    galeriaItems.forEach(item => {
+      item.addEventListener('click', function() {
+        // Aqui você pode implementar um lightbox ou modal para exibir a imagem em tamanho maior
+        // Por exemplo, usando uma biblioteca como Fancybox ou criando seu próprio modal
+        
+        // Exemplo simples de alerta (substitua por um lightbox real em produção)
+        const titulo = this.querySelector('h3').textContent;
+        console.log(`Imagem clicada: ${titulo}`);
+      });
+    });
+  });
+</script>

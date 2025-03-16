@@ -13,7 +13,11 @@ import { Image } from 'astro:assets';
           Tenha atendimento veterinário em casa com o respaudo de uma clínica veterinária. Consultas, vacinas, exames, e caso seja necessário, buscamos e entregamos em domicílio para Internações e cirurgias.
         </p>
         <div class="flex flex-col sm:flex-row gap-4">
-          <a href="https://tintim.link/whatsapp/d1a3a6b0-0bc6-4664-84f1-9d5a51acf0b1/89a1acac-ead5-48e1-81d9-0481845d24f9" class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-colors text-center">
+          <a 
+            href="https://tintim.link/whatsapp/d1a3a6b0-0bc6-4664-84f1-9d5a51acf0b1/89a1acac-ead5-48e1-81d9-0481845d24f9" 
+            class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-colors text-center"
+            onclick="return gtag_report_conversion('https://tintim.link/whatsapp/d1a3a6b0-0bc6-4664-84f1-9d5a51acf0b1/89a1acac-ead5-48e1-81d9-0481845d24f9')"
+          >
             Agendar Consulta
           </a>
           <a href="#servicos" class="border-2 border-secondary hover:border-primary text-secondary hover:text-primary font-bold py-3 px-8 rounded-full transition-colors text-center">
@@ -28,31 +32,14 @@ import { Image } from 'astro:assets';
           loading="lazy"
           width="800"
           height="600"
-          class="rounded-lg shadow-xl w-full h-auto"
+          class="rounded-lg shadow-xl"
         />
-      </div>
-    </div>
-  </div>
-  
-  <!-- Estatísticas -->
-  <div class="container mx-auto px-4 mt-16">
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 text-center">
-          <div class="bg-white p-6 rounded-lg shadow-md">
-        <div class="text-primary text-3xl font-bold mb-2">Longo Alcance</div>
-        <div class="text-gray-600">
-          <p>Porto Alegre</p>
-          <p>Viamão</p>
-          <p>Alvorada</p>
-          <p>Canoas</p>
+        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
+          <div class="flex items-center">
+            <div class="bg-green-500 h-3 w-3 rounded-full animate-pulse mr-2"></div>
+            <p class="text-sm font-medium text-gray-800">Atendimento disponível</p>
+          </div>
         </div>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <div class="text-primary text-3xl font-bold mb-2">+5000</div>
-        <div class="text-gray-600">Pets Atendidos</div>
-      </div>
-      <div class="bg-white p-6 rounded-lg shadow-md">
-        <div class="text-primary text-3xl font-bold mb-2">Em Casa</div>
-        <div class="text-gray-600">Atendimento domicílio</div>
       </div>
     </div>
   </div>

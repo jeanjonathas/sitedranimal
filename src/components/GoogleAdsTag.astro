@@ -7,3 +7,19 @@
 
   gtag('config', 'AW-1030538829');
 </script>
+
+<!-- Event snippet for Clique Botões LP conversion -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-1030538829/rPWdCPfwvd8YEM2Ms-sD',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>

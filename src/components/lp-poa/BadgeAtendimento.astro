@@ -1,0 +1,70 @@
+---
+// Badge de atendimento 24 horas reutilizável
+// Propriedades:
+// - position: string - posição do badge (default, top-right, bottom-left, etc.)
+// - className: string - classes adicionais para personalização
+
+interface Props {
+  position?: string;
+  className?: string;
+}
+
+const { 
+  position = "default",
+  className = ""
+} = Astro.props;
+
+// Definir classes de posicionamento
+let positionClasses = "";
+
+switch (position) {
+  case "top-right":
+    positionClasses = "absolute top-6 right-6";
+    break;
+  case "bottom-left":
+    positionClasses = "absolute -bottom-6 left-6";
+    break;
+  case "bottom-right":
+    positionClasses = "absolute -bottom-6 -right-6";
+    break;
+  case "center-right":
+    positionClasses = "absolute top-1/2 -translate-y-1/2 -right-6";
+    break;
+  default:
+    positionClasses = "";
+}
+
+// Classes responsivas
+const mobileClasses = "mx-auto my-4 md:my-0 md:mx-0";
+---
+
+<div class={`bg-white rounded-lg shadow-xl p-4 md:p-6 border-2 border-red-600 ${position === "default" ? mobileClasses : `hidden md:block ${positionClasses}`} ${className} hover:scale-105 transition-transform duration-300`}>
+  <div class="flex items-center gap-3 md:gap-4">
+    <div class="bg-red-600 p-3 md:p-4 rounded-full animate-pulse">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    </div>
+    <div>
+      <p class="text-sm md:text-base text-gray-600 font-medium">Atendimento</p>
+      <p class="font-bold text-red-600 text-lg md:text-2xl">24 HORAS</p>
+    </div>
+  </div>
+</div>
+
+<!-- Versão mobile para badges posicionados absolutamente -->
+{position !== "default" && (
+  <div class="bg-white rounded-lg shadow-xl p-4 flex md:hidden mx-auto my-4 w-fit border-2 border-red-600 hover:scale-105 transition-transform duration-300">
+    <div class="flex items-center gap-3">
+      <div class="bg-red-600 p-3 rounded-full animate-pulse">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+      </div>
+      <div>
+        <p class="text-sm text-gray-600 font-medium">Atendimento</p>
+        <p class="font-bold text-red-600 text-lg">24 HORAS</p>
+      </div>
+    </div>
+  </div>
+)}

@@ -1,0 +1,129 @@
+---
+import BadgeAtendimento from './BadgeAtendimento.astro';
+---
+
+<section id="sobre" class="py-20 bg-gradient-to-b from-white to-gray-50">
+  <div class="container mx-auto px-4">
+    <!-- Cabeçalho da seção com badge -->
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center bg-primary/10 px-3 py-1 rounded-full text-primary text-sm font-medium mb-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+        Conheça nossa história
+      </div>
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-2">Sobre a <span class="text-primary">Dr. Animal</span></h2>
+      <div class="w-20 h-1 bg-primary mx-auto mt-4 mb-6 rounded-full"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <!-- Coluna de texto -->
+      <div class="order-2 md:order-1">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
+          <p class="text-gray-700 mb-5 leading-relaxed">
+          Com mais de <span class="font-semibold text-primary">5 anos de experiência</span>, nossa história começou com o atendimento domiciliar realizado em uma moto. Graças à confiança e reconhecimento dos nossos clientes, hoje somos uma clínica veterinária 24 horas, mantendo o atendimento em domicílio para garantir a comodidade dos tutores e o conforto dos pets.
+          </p>
+          <p class="text-gray-700 mb-5 leading-relaxed">
+            Nossa equipe é formada por profissionais altamente qualificados e apaixonados por animais. Contamos com instalações modernas e equipamentos de última geração, que asseguram diagnósticos precisos e tratamentos eficazes. Nosso compromisso é proporcionar bem-estar e qualidade de vida para os animais de estimação, sempre oferecendo o melhor para seu pet.
+          </p>
+          
+          <div class="flex flex-col sm:flex-row gap-4 mt-8">
+            <a href="#contato" class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full transition-colors text-center group">
+              <span class="flex items-center justify-center">
+                Entre em Contato
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </a>
+            <a href="#depoimentos" class="border-2 border-secondary hover:border-primary text-secondary hover:text-primary font-bold py-3 px-8 rounded-full transition-colors text-center">
+              Ver Depoimentos
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Coluna de imagens -->
+      <div class="order-1 md:order-2 relative">
+        <div class="grid grid-cols-2 gap-4">
+          <img 
+            src="/src/images/44b.jpg" 
+            alt="Veterinário examinando um gato" 
+            loading="lazy"
+            width="400"
+            height="300"
+            class="rounded-2xl shadow-md w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
+          />
+          <img 
+            src="/src/images/cachorro-examinado.jpg" 
+            alt="Cachorro sendo examinado" 
+            loading="lazy"
+            width="400"
+            height="300"
+            class="rounded-2xl shadow-md w-full h-64 object-cover mt-8 transform hover:scale-105 transition-transform duration-300"
+          />
+          <img 
+            src="/src/images/AirBrush_20240301171934 (1).jpg" 
+            alt="Equipamentos veterinários" 
+            loading="lazy"
+            width="400"
+            height="300"
+            class="rounded-2xl shadow-md w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
+          />
+          <img 
+            src="/src/images/recepcao-clinica.jpg" 
+            alt="Recepção da clínica" 
+            loading="lazy"
+            width="400"
+            height="300"
+            class="rounded-2xl shadow-md w-full h-64 object-cover mt-8 transform hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+        <!-- Elementos decorativos -->
+        <div class="absolute -top-6 -left-6 w-20 h-20 bg-primary/10 rounded-full -z-10"></div>
+        <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/10 rounded-full -z-10"></div>
+        <BadgeAtendimento position="top-right" className="z-10" />
+      </div>
+    </div>
+    
+    <!-- Diferenciais -->
+    <div class="mt-24">     
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-primary/20 transition-colors group hover:-translate-y-2 duration-300">
+          <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-300 text-6xl">
+            🕒
+          </div>
+          <h4 class="text-xl font-bold text-secondary mb-3">Atendimento 24h</h4>
+          <p class="text-gray-600">Disponíveis a qualquer hora para cuidar do seu pet em casos de emergência.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-primary/20 transition-colors group hover:-translate-y-2 duration-300">
+          <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-300 text-6xl">
+            👩‍⚕️
+          </div>
+          <h4 class="text-xl font-bold text-secondary mb-3">Equipe Especializada</h4>
+          <p class="text-gray-600">Profissionais com formação especializada e constante atualização técnica.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-primary/20 transition-colors group hover:-translate-y-2 duration-300">
+          <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-300 text-6xl">
+            🚑
+          </div>
+          <h4 class="text-xl font-bold text-secondary mb-3">Busca e Entrega</h4>
+          <p class="text-gray-600">Serviço atendimento em domicílio para maior comodidade.</p>
+        </div>
+
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:border-primary/20 transition-colors group hover:-translate-y-2 duration-300">
+          <div class="text-primary mb-6 group-hover:scale-110 transition-transform duration-300 text-6xl">
+            💉
+          </div>
+          <h4 class="text-xl font-bold text-secondary mb-3">Diagnóstico Preciso</h4>
+          <p class="text-gray-600">Parceria com profissionais com equipamentos modernos para exames laboratoriais e diagnósticos por imagem (raio-x e ultrassom).</p>
+        </div>
+      </div>
+    </div>   
+
+    </div>
+  </div>
+</section>

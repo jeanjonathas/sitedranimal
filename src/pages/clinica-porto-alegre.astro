@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/lp-poa/Navbar.astro';
+import Hero from '../components/lp-poa/Hero.astro';
+import Servicos from '../components/lp-poa/Servicos.astro';
+import Sobre from '../components/lp-poa/Sobre.astro';
+import Equipe from '../components/lp-poa/Equipe.astro';
+import Galeria from '../components/lp-poa/Galeria.astro';
+import Depoimentos from '../components/lp-poa/Depoimentos.astro';
+import Blog from '../components/lp-poa/Blog.astro';
+import Planos from '../components/lp-poa/Planos.astro';
+import Faq from '../components/lp-poa/Faq.astro';
+import Cta from '../components/lp-poa/Cta.astro';
+import Parceiros from '../components/lp-poa/Parceiros.astro';
+import Localizacao from '../components/lp-poa/Localizacao.astro';
+import Contato from '../components/lp-poa/Contato.astro';
+import Footer from '../components/lp-poa/Footer.astro';
+import Transporte from '../components/lp-poa/Transporte.astro';
+import WhatsappButton from '../components/lp-poa/WhatsappButton.astro';
+---
+
+<Layout title="Dr. Animal - Clínica Veterinária">
+  <Navbar />
+  <main>
+    <Hero />
+    <Servicos />
+    <Transporte />
+    <Depoimentos />
+    <Sobre />
+    <Equipe />
+    <Galeria />
+    {/* <Blog /> */}
+    {/* <Planos /> */}
+    <Faq />
+    <Cta />
+    <Parceiros />
+    <Localizacao />
+    <Contato />
+  </main>
+  <Footer />
+  <WhatsappButton />
+</Layout>

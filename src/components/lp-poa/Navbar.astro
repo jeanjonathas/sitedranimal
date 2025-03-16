@@ -1,0 +1,91 @@
+---
+---
+
+<header class="bg-white shadow-md fixed w-full z-50">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center py-4">
+      <a href="/" class="flex items-center">
+        <img 
+          src="https://dranimal.com.br/wp-content/uploads/elementor/thumbs/logo_horizontal-qb9fwc4wufwidajtil836uw0ud9s1tlm72ngc6g88o.png" 
+          alt="Dr. Animal Logo" 
+          width="180"
+          height="48"
+          loading="lazy"
+          class="h-auto max-h-12 w-auto"
+        />
+      </a>
+      
+      <div class="hidden md:flex space-x-6">
+        <a href="#servicos" class="text-secondary hover:text-primary font-medium transition-colors">Serviços</a>
+        <a href="#transporte" class="text-secondary hover:text-primary font-medium">
+          <span class="flex items-center">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+            </svg>
+            Transporte
+          </span>
+        </a>
+        <a href="#sobre" class="text-secondary hover:text-primary font-medium transition-colors">Sobre Nós</a>
+        <a href="#depoimentos" class="text-secondary hover:text-primary font-medium transition-colors">Depoimentos</a>
+        <a href="#contato" class="text-secondary hover:text-primary font-medium transition-colors">Contato</a>
+      </div>
+      
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-secondary focus:outline-none">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="hidden md:block">
+        <a href="https://tintim.link/whatsapp/d1a3a6b0-0bc6-4664-84f1-9d5a51acf0b1/5fac58ef-605c-42d1-9be3-f3812d5bdbbd" class="bg-primary hover:bg-primary/90 text-white font-bold py-2 px-6 rounded-full transition-colors">
+          Agendar Consulta
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+    <div class="container mx-auto px-4 py-3 space-y-3">
+      <a href="#servicos" class="block text-secondary hover:text-primary font-medium">Serviços</a>
+      <a href="#transporte" class="block text-secondary hover:text-primary font-medium">
+        <span class="flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+          </svg>
+          Transporte
+        </span>
+      </a>
+      <a href="#sobre" class="block text-secondary hover:text-primary font-medium">Sobre Nós</a>
+      <a href="#depoimentos" class="block text-secondary hover:text-primary font-medium">Depoimentos</a>
+      <a href="#contato" class="block text-secondary hover:text-primary font-medium">Contato</a>
+      <a href="https://tintim.link/whatsapp/d1a3a6b0-0bc6-4664-84f1-9d5a51acf0b1/5fac58ef-605c-42d1-9be3-f3812d5bdbbd" class="block bg-primary hover:bg-primary/90 text-white font-bold py-2 px-4 rounded-full text-center">
+        Agendar Consulta
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+  
+  // Close mobile menu when clicking on a link
+  const mobileLinks = document.querySelectorAll('#mobile-menu a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+    });
+  });
+</script>

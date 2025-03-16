@@ -38,7 +38,7 @@ switch (position) {
 const mobileClasses = "mx-auto my-4 md:my-0 md:mx-0";
 ---
 
-<div class={`bg-white rounded-lg shadow-xl p-4 md:p-6 border-2 border-red-600 ${position === "default" ? mobileClasses : `hidden md:block ${positionClasses}`} ${className} hover:scale-105 transition-transform duration-300`}>
+<div class={`bg-white rounded-lg shadow-xl p-4 md:p-6 border-2 border-red-600 ${position === "default" ? mobileClasses : `hidden md:block ${positionClasses}`} ${className} hover:scale-105 transition-transform duration-300 overflow-hidden`} style="max-width: 100%; box-sizing: border-box;">
   <div class="flex items-center gap-3 md:gap-4">
     <div class="bg-red-600 p-3 md:p-4 rounded-full animate-pulse">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-8 md:w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -54,7 +54,7 @@ const mobileClasses = "mx-auto my-4 md:my-0 md:mx-0";
 
 <!-- Versão mobile para badges posicionados absolutamente -->
 {position !== "default" && (
-  <div class="bg-white rounded-lg shadow-xl p-4 flex md:hidden mx-auto my-4 w-fit border-2 border-red-600 hover:scale-105 transition-transform duration-300">
+  <div class="bg-white rounded-lg shadow-xl p-4 flex md:hidden mx-auto my-4 w-fit border-2 border-red-600 hover:scale-105 transition-transform duration-300 overflow-hidden" style="max-width: 100%; box-sizing: border-box;">
     <div class="flex items-center gap-3">
       <div class="bg-red-600 p-3 rounded-full animate-pulse">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">

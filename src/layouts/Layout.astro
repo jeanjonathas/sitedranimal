@@ -13,7 +13,7 @@ const { title, description = "Clínica Veterinária 24 horas. Consultas, vacinas
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="icon" type="image/png" href="/images/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
@@ -52,6 +52,7 @@ const { title, description = "Clínica Veterinária 24 horas. Consultas, vacinas
     </script>
     
     <ViewTransitions />
+    
   </head>
   <body class="font-sans min-h-screen bg-white">
     <slot />

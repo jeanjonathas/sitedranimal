@@ -1,6 +1,5 @@
 ---
 import { ViewTransitions } from 'astro:transitions';
-import WhatsappButton from '../components/index/WhatsappButton.astro';
 
 interface Props {
   title: string;
@@ -15,7 +14,7 @@ const { title, description = "Clínica Veterinária 24 horas. Consultas, vacinas
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/png" href="/src/images/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -46,7 +45,8 @@ const { title, description = "Clínica Veterinária 24 horas. Consultas, vacinas
           <div>
             <h3 class="text-xl font-bold mb-4">Dr. Animal</h3>
             <p class="mb-4">Clínica Veterinária 24 horas. Consultas, vacinas, exames, internações e cirurgias.</p>
-            <p>Buscamos e entregamos em domicílio.</p>
+            <p>Atendimento em domicílio</p>
+            <p>Porto Alegre, Viamão, Alvorada e Canoas</p>
           </div>
           <div>
             <h3 class="text-xl font-bold mb-4">Contato</h3>
@@ -83,7 +83,6 @@ const { title, description = "Clínica Veterinária 24 horas. Consultas, vacinas
         </div>
       </div>
     </footer>
-    <WhatsappButton />
     <script>
       // Smooth scroll para links de âncora
       document.addEventListener('DOMContentLoaded', function() {
